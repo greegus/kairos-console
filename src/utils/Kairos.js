@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default class Kairos {
-  _apiBaseUrl = 'http://api.kairos.com'
+  _apiBaseUrl = 'https://api.kairos.com'
 
   _config = {}
 
