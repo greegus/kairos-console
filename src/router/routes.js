@@ -14,7 +14,10 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: LoginScreen
+    component: LoginScreen,
+    meta: {
+      title: 'Kairos console'
+    }
   },
   {
     path: '/',
@@ -28,6 +31,9 @@ const routes = [
         path: 'new',
         name: 'new',
         component: NewGalleryScreen,
+        meta: {
+          title: 'New gallery'
+        }
       },
       {
         path: 'gallery/:galleryName',
@@ -36,6 +42,9 @@ const routes = [
           {
             path: '',
             component: GalleryViewScreen,
+            meta: {
+              title: 'Gallery list'
+            },
             children: [
               {
                 path: '',
@@ -52,45 +61,53 @@ const routes = [
           {
             path: 'recognize',
             name: 'recognize',
-            component: RecognizeScreen
+            component: RecognizeScreen,
+            meta: {
+              title: 'Recognize'
+            }
           },
           {
             path: 'settings',
             name: 'settings',
-            component: GallerySettingsScreen
+            component: GallerySettingsScreen,
+            meta: {
+              title: 'Settings'
+            }
           },
           {
             path: 'enroll',
             name: 'enroll',
-            component: GalleryEnrollScreen
+            component: GalleryEnrollScreen,
+            meta: {
+              title: 'Enroll'
+            }
           },
           {
             path: 'detect',
             name: 'detect',
-            component: DetectScreen
+            component: DetectScreen,
+            meta: {
+              title: 'Detect'
+            }
           },
         ]
       },
       {
         path: 'enroll',
         name: 'new-enroll',
-        component: GalleryEnrollScreen
+        component: GalleryEnrollScreen,
+        meta: {
+          title: 'Enroll'
+        }
       },
       {
         path: 'detect',
         name: 'new-detect',
-        component: DetectScreen
-      },
-      // {
-      //   path: 'view',
-      //   name: 'view',
-      //   component: GalleryViewScreen
-      // },
-      // {
-      //   path: 'enroll',
-      //   name: 'enroll',
-      //   component: EnrollScreen
-      // }
+        component: DetectScreen,
+        meta: {
+          title: 'Detect'
+        }
+      }
     ]
   }
 ]
