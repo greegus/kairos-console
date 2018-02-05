@@ -42,7 +42,7 @@
       </router-link>
     </div>
 
-    <div v-if="appAuth" class="mt-auto mb-2">
+    <div v-if="appAuth" class="mt-auto mb-3">
       <a href class="TheSidebar__link" @click.prevent="clearAppAuth()">
         Logout
       </a>
@@ -125,7 +125,7 @@
   }
 
   .TheSidebar__logo {
-    padding: 1rem 1rem .5rem;
+    padding: 1rem 1.25rem .5rem;
     color: white;
     text-decoration: none;
     position: relative;
@@ -140,7 +140,7 @@
 
     display: flex;
     align-items: center;
-    padding: .5rem 1rem;
+    padding: .5rem 1.5rem;
 
     color: white;
 
@@ -181,7 +181,7 @@
 
   .TheSidebar__link {
     display: block;
-    padding: .5rem 1rem;
+    padding: .5rem 1.5rem;
     color: $gray-500;
 
     &:hover {

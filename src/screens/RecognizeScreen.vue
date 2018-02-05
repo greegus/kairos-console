@@ -1,43 +1,34 @@
 <template>
   <div class="RecognizeScreen p-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <h1>
-            Recognize face
-          </h1>
+    <div class="wrapper">
+      <h1>
+        Recognize face
+      </h1>
 
-          <hr/>
+      <hr/>
 
-          <form @submit.prevent="submit()" class="form">
-            <div class="form-group">
-              <label class="form-label">Image to recognize from gallery</label>
-              <ImagePicker :value="image" @input="image = $event; submit()"/>
-            </div>
-
-          </form>
-
-          <div class="d-flex my-4">
-            <LoadingIcon v-if="isSubmitting">
-              Loading…
-            </LoadingIcon>
-
-            <p class="text-danger" v-if="error">
-              {{ error }}
-            </p>
-
-            <a href @click.prevent="clear()" v-if="results">
-              Clear results
-            </a>
-          </div>
-
-          <pre class="small">
-            {{ results }}
-          </pre>
+      <form @submit.prevent="submit()" class="form">
+        <div class="form-group">
+          <label class="form-label">Image to recognize in gallery</label>
+          <ImagePicker :value="image" @input="image = $event; submit()"/>
         </div>
+
+      </form>
+
+      <div class="my-4">
+        <LoadingIcon v-if="isSubmitting">
+          Loading…
+        </LoadingIcon>
+
+        <p class="text-danger card border p-3" v-if="error">
+          Recognition error: {{ error }}
+        </p>
+
+        <RecognitionResults v-if="results"
+          :results="results"
+        />
       </div>
     </div>
-
   </div>
 </template>
 
@@ -46,11 +37,13 @@
 
   import ImagePicker from '@/components/ImagePicker'
   import LoadingIcon from '@/components/LoadingIcon'
+  import RecognitionResults from '@/components/RecognitionResults'
 
   export default {
     components: {
       ImagePicker,
-      LoadingIcon
+      LoadingIcon,
+      RecognitionResults
     },
 
     props: {},

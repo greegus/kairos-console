@@ -1,24 +1,20 @@
 <template>
   <div class="GalleryEnrollScreen p-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <h1>
-            Enroll to gallery
-          </h1>
+    <div class="wrapper">
+      <h1>
+        Enroll to gallery
+      </h1>
 
-          <hr/>
+      <hr/>
 
-          <div class="text-danger" v-if="responseError">
-            {{ responseError }}
-          </div>
-
-          <EnrollForm
-            :disabled="isSubmitting"
-            @submit="submit($event)"
-          />
-        </div>
+      <div class="text-danger" v-if="responseError">
+        {{ responseError }}
       </div>
+
+      <EnrollForm
+        :disabled="isSubmitting"
+        @submit="submit($event)"
+      />
     </div>
   </div>
 </template>
@@ -35,9 +31,7 @@
       EnrollForm
     },
 
-    props: {
-
-    },
+    props: {},
 
     data() {
       return {

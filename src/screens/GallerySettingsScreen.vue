@@ -1,48 +1,44 @@
 <template>
-	<div class="GallerySettingsScreen p-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <h1>
-            Settings
-          </h1>
+  <div class="GallerySettingsScreen p-4">
+    <div class="wrapper">
+      <h1>
+        Settings
+      </h1>
 
-          <hr/>
+      <hr/>
 
-          <h2 class="h4">Remove this gallery</h2>
+      <h2 class="h4">Remove this gallery</h2>
 
-          <p>Remove this gallery with all stored images</p>
+      <p>Remove this gallery with all stored images</p>
 
-          <button class="btn btn-outline-danger" @click="removeGallery()" :disabled="isRemovingGallery">
-            {{ isRemovingGallery ? 'Removing gallery…' : 'Remove gallery' }}
-          </button>
-        </div>
-      </div>
+      <button class="btn btn-outline-danger" @click="removeGallery()" :disabled="isRemovingGallery">
+        {{ isRemovingGallery ? 'Removing gallery…' : 'Remove gallery' }}
+      </button>
     </div>
-	</div>
+  </div>
 </template>
 
 <script>
   import KairosApi from '@/services/KairosApi'
 
-	export default {
-		components: {},
+  export default {
+    components: {},
 
-		props: {},
+    props: {},
 
-		data() {
-			return {
-			  isRemovingGallery: false
-      }
-		},
-
-		computed: {
-		  galleryName() {
-		    return this.$store.route.params.galleryName
+    data() {
+      return {
+        isRemovingGallery: false
       }
     },
 
-		methods: {
+    computed: {
+      galleryName() {
+        return this.$store.route.params.galleryName
+      }
+    },
+
+    methods: {
       async removeGallery() {
         if (confirm('Remove this gallery?')) {
           this.isRemovingGallery = true
@@ -56,7 +52,7 @@
         }
       }
     },
-	}
+  }
 </script>
 
 <style lang="scss" scoped>

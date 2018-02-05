@@ -1,22 +1,17 @@
 <template>
   <div class="DetectScreen p-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <form @submit.prevent="submit()" class="form">
-            <div class="form-group">
-              <label class="form-label">Image for detection</label>
-              <ImagePicker :value="image" @input="image = $event; submit()"/>
-            </div>
+    <div class="wrapper">
+      <form @submit.prevent="submit()" class="form">
+        <div class="form-group">
+          <label class="form-label">Image for detection</label>
+          <ImagePicker :value="image" @input="image = $event; submit()"/>
+        </div>
 
-            <pre>
+        <pre>
               {{ results }}
             </pre>
-          </form>
-        </div>
-      </div>
+      </form>
     </div>
-
   </div>
 </template>
 
@@ -50,7 +45,8 @@
       }
     },
 
-    created() {}
+    created() {
+    }
   }
 </script>
 

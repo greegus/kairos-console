@@ -1,47 +1,43 @@
 <template>
   <div class="GalleryListScreen p-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <h1>
-            List gallery
-          </h1>
+    <div class="wrapper">
+      <h1>
+        List gallery
+      </h1>
 
-          <hr/>
+      <hr/>
 
-          <div class="" v-if="isLoading" key="loading">
-            <LoadingIcon/>
-          </div>
+      <div class="" v-if="isLoading" key="loading">
+        <LoadingIcon/>
+      </div>
 
-          <div v-else key="loading">
-            <table class="table table-hover table-sm">
-              <thead>
-              <tr>
-                <th>Subject</th>
-                <th></th>
-              </tr>
-              </thead>
+      <div v-else key="loading">
+        <table class="table table-hover table-sm">
+          <thead>
+          <tr>
+            <th>Subject</th>
+            <th></th>
+          </tr>
+          </thead>
 
-              <tbody>
-              <tr v-for="subjectId in gallery" class="GalleryScreen__row" :class="{'text-muted': isRemoving[subjectId]}">
-                <td>
-                  <router-link :to="{name: 'subject', params: {galleryName, subjectId}}">
-                    {{ subjectId }}
-                  </router-link>
-                </td>
+          <tbody>
+          <tr v-for="subjectId in gallery" class="GalleryScreen__row" :class="{'text-muted': isRemoving[subjectId]}">
+            <td>
+              <router-link :to="{name: 'subject', params: {galleryName, subjectId}}">
+                {{ subjectId }}
+              </router-link>
+            </td>
 
-                <td class="text-right" :class="{'invisible': isRemoving[subjectId]}">
-                  <div class="GalleryScreen__options">
-                    <a href @click.prevent="removeSubject(subjectId)">
-                      <Icon name="trash"/>
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+            <td class="text-right" :class="{'invisible': isRemoving[subjectId]}">
+              <div class="GalleryScreen__options">
+                <a href @click.prevent="removeSubject(subjectId)">
+                  <Icon name="trash"/>
+                </a>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

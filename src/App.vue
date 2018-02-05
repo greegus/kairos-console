@@ -24,10 +24,6 @@
         'appAuth'
       ])
     }
-
-//    created() {
-//      this.$store.dispatch('console/init')
-//    }
   }
 </script>
 
@@ -38,16 +34,18 @@
 <style lang="scss" scoped>
   .App {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     background: whitesmoke;
     align-items: stretch;
+    overflow: hidden;
   }
 
   .App__sidebar {
-    flex: 0 0 200px;
+    flex: 0 0 240px;
   }
 
   .App__content {
     flex: 1 0 auto;
+    overflow-y: auto;
   }
 </style>

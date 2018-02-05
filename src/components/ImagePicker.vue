@@ -5,11 +5,11 @@
 
       <div class="ImagePicker__buttons">
         <FilePicker class="btn btn-lg btn-outline-secondary mx-1" @select="readFile($event)">
-          <Icon name="upload"/>
+          <Icon name="upload"/> Upload image
         </FilePicker>
 
         <button class="btn btn-lg btn-outline-secondary mx-1" type="button" @click="takePhoto()">
-          <Icon name="camera"/>
+          <Icon name="camera"/> Take a photo
         </button>
       </div>
     </div>

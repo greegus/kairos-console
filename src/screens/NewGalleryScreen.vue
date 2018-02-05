@@ -1,18 +1,20 @@
 <template>
   <div class="NewGalleryScreen p-4">
-    <div class="containe">
-      <div class="row">
-        <div class="col-8">
-          <div class="text-danger" v-if="responseError">
-            {{ responseError }}
-          </div>
+    <h1>
+      Create new gallery
+    </h1>
 
-          <NewGalleryForm
-            :disabled="isSubmitting"
-            @submit="submit($event)"
-          />
-        </div>
+    <hr/>
+
+    <div class="wrapper">
+      <div class="text-danger" v-if="responseError">
+        {{ responseError }}
       </div>
+
+      <NewGalleryForm
+        :disabled="isSubmitting"
+        @submit="submit($event)"
+      />
     </div>
   </div>
 </template>

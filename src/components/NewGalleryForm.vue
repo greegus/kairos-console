@@ -7,6 +7,10 @@
 
     <hr/>
 
+    <p class="alert alert-info">
+      To create a new gallery, you also need to upload a photo of first subject.
+    </p>
+
     <div class="form-group">
       <label class="form-label">Name of the person</label>
       <input type="text" v-model="person.subjectId" placeholder="Enter full name of the person to enroll" class="form-control" :class="{'is-invalid': errors.subjectId}">
