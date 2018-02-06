@@ -8,7 +8,7 @@
       <hr/>
 
       <div class="" v-if="isLoading" key="loading">
-        <LoadingIcon/>
+        <LoadingIcon :large="true" />
       </div>
 
       <div v-else key="loading">

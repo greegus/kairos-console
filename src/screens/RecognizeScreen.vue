@@ -16,8 +16,8 @@
       </form>
 
       <div class="my-4">
-        <LoadingIcon v-if="isSubmitting">
-          Loading…
+        <LoadingIcon :large="true" v-if="isSubmitting">
+          Recognizing…
         </LoadingIcon>
 
         <p class="text-danger card border p-3" v-if="error">
